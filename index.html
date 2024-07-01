@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkenalan Diri</title>
+    <style>
+        @font-face {
+            font-family: 'Horizon';
+            src: url('assets/horizon.otf') format('opentype');
+        }
+        body {
+            font-family: 'Horizon', sans-serif; /* Gunakan font Horizon lokal */
+            background-color: #007bff; /* Latar belakang biru */
+            color: #fff; /* Warna teks putih */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Horizon', sans-serif; /* Font Horizon untuk keseluruhan profil */
+            color: #333; /* Warna teks untuk profil */
+        }
+        .profile-photo {
+            max-width: 200px; /* Ukuran maksimum foto */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #333; /* Warna teks untuk nama */
+        }
+        p {
+            color: #666; /* Warna teks untuk bio */
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #0056b3; /* Warna tombol */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080; /* Warna tombol saat dihover */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.querySelector('audio');
+            const changeColorBtn = document.getElementById('changeColorBtn');
+            let isAudioPlaying = false;
+
+            // Fungsi untuk memulai atau menghentikan audio saat tombol ditekan
+            changeColorBtn.addEventListener('click', function() {
+                if (!isAudioPlaying) {
+                    audio.play();
+                    isAudioPlaying = true;
+                    changeColorBtn.textContent = 'Stop Audio :I';
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0; // Untuk memulai ulang audio dari awal
+                    isAudioPlaying = false;
+                    changeColorBtn.textContent = 'Pencet untuk Audio :D';
+                }
+            });
+
+            // Fungsi untuk mengubah warna latar belakang profil
+            changeColorBtn.addEventListener('mouseover', function() {
+                const colors = ['#f4f4f9', '#e0f7fa', '#ffeb3b', '#ffcdd2', '#c8e6c9'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.querySelector('.profile').style.backgroundColor = randomColor;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="assets/my-photo.jpeg" alt="My Photo" class="profile-photo">
+            <h1 id="name">Farand Altaf Emian</h1>
+            <p id="bio">Halo Semua :D, Saya suka bersepeda, bernafas, dan berdebat. Tujuan hidup saya kurang lebih ialah bertahan hidup selama mungkin :3. Saya adalah seorang Nasionalis Libertarian yang menekankan Nilai Nilai Konservatif dan Budaya Nusantara</p>
+            <button id="changeColorBtn">Pencet untuk Audio :D</button>
+        </div>
+    </div>
+
+    <!-- Audio Musik -->
+    <audio controls autoplay loop>
+        <source src="assets/audio-web.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
