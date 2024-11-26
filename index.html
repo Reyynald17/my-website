@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Hari Guru</title>
     <style>
-        /* Reset */
         body, html {
             margin: 0;
             padding: 0;
@@ -24,11 +23,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/WhatsApp Image 2024-11-24 at 22.07.38.jpeg'), 
-                        url('images/WhatsApp Image 2024-11-24 at 22.07.44.jpeg'), 
-                        url('images/WhatsApp Image 2024-11-24 at 22.07.43 (1).jpeg'), 
-                        url('images/WhatsApp Image 2024-11-24 at 22.07.43.jpeg'), 
-                        url('images/WhatsApp Image 2024-11-24 at 22.07.41.jpeg'), 
+            background: url('images/WhatsApp Image 2024-11-24 at 22.07.38.jpeg'),
+                        url('images/WhatsApp Image 2024-11-24 at 22.07.44.jpeg'),
+                        url('images/WhatsApp Image 2024-11-24 at 22.07.43 (1).jpeg'),
+                        url('images/WhatsApp Image 2024-11-24 at 22.07.43.jpeg'),
+                        url('images/WhatsApp Image 2024-11-24 at 22.07.41.jpeg'),
                         url('images/WhatsApp Image 2024-11-24 at 22.07.40.jpeg');
             background-size: cover;
             background-position: center;
@@ -53,50 +52,14 @@
             text-align: center;
             z-index: 1;
             position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 5%;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .message h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ff512f, #dd2476);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .message p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        button {
-            background: linear-gradient(to right, #43cea2, #185a9d);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        button:active {
-            background: linear-gradient(to right, #ff512f, #dd2476); /* Contrasting color */
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-            transform: scale(0.95); /* Optional: gives a pressed effect */
+            animation: fadeIn 2s ease-in-out forwards;
+            width: 90%;
+            max-width: 600px;
         }
 
         @keyframes fadeIn {
@@ -109,20 +72,135 @@
                 transform: translateY(0);
             }
         }
+
+        .message h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            animation: textGlow 2s infinite alternate;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0px 0px 5px rgba(255, 81, 47, 0.5);
+            }
+            100% {
+                text-shadow: 0px 0px 20px rgba(255, 81, 47, 1);
+            }
+        }
+
+        .message h1:hover {
+            transform: scale(1.1);
+            text-shadow: 0px 5px 15px rgba(255, 81, 47, 0.8);
+        }
+
+        .message p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            animation: fadeInText 3s ease-in-out;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media screen and (max-width: 768px) {
+            .message {
+                padding: 10%;
+            }
+            .message h1 {
+                font-size: 2.5rem;
+            }
+            .message p {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .message h1 {
+                font-size: 2rem;
+            }
+            .message p {
+                font-size: 1.2rem;
+            }
+            button {
+                padding: 12px 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <audio id="backgroundAudio" loop>
+        <source src="audio/lagu-pengiring.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
     <div class="background"></div>
-    <div class="message">
-        <h1>Selamat Hari Guru!</h1>
-        <p>Anda menginspirasi, membimbing, dan membentuk masa depan kami. Terima kasih untuk segalanya!</p>
+    <div class="message" id="message">
+        <h1 id="title">Selamat Hari Guru!</h1>
+        <p>Bu Jumayah adalah lentera yang menerangi jalan kami menuju masa depan. Terima kasih atas dedikasi Bu Jumayah!</p>
         <button id="morphButton">Klik untuk Kejutan</button>
     </div>
+
     <script>
         document.getElementById('morphButton').addEventListener('click', () => {
             const button = document.getElementById('morphButton');
-            button.style.background = 'linear-gradient(to right, #ff512f, #dd2476)'; // Contrasting color
-            alert("🌟 Anda adalah GURU TERBAIK yang pernah ada! 🌟");
+            button.style.background = 'linear-gradient(to right, #ff512f, #dd2476)';
+            alert("🌟 Bu Jumayah adalah GURU TERHEBAT! 🌟");
+
+            const audio = document.getElementById('backgroundAudio');
+            audio.play(); 
+
+            const message = document.getElementById('message');
+            message.style.opacity = 1; 
+        });
+
+        document.getElementById('title').addEventListener('click', () => {
+            const title = document.getElementById('title');
+            title.style.transform = "rotate(10deg) scale(1.1)";
+            setTimeout(() => {
+                title.style.transform = "rotate(0deg) scale(1)";
+            }, 500);
         });
     </script>
 </body>
